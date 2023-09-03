@@ -10,6 +10,8 @@
 <body>
   <?php
   echo ('test');
+  echo ('<br>');
+  echo ('hi');
   ?>
 </body>
 
