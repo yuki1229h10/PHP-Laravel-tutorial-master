@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "IDとパスワードを入力してください"
+AuthUserFile /Applications/MAMP/htdocs/PHP-Laravel-tutorial-master/02_お問い合わせフォーム/14_ベーシック認証について/.htpasswd
+require valid-user
