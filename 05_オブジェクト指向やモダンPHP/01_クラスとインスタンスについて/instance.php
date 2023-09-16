@@ -18,4 +18,9 @@ class Product
   {
     echo $this->product;
   }
+
+  public function addProduct($item)
+  {
+    $this->product .= $item;
+  }
 }
