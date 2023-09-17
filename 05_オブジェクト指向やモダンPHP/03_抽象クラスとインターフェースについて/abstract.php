@@ -2,7 +2,36 @@
 
 use Product as GlobalProduct;
 
-class Product
+// 抽象クラス 設定するメソッドを強制
+abstract class ProductAbstract
+{
+  // 変数 関数
+  public function echoProduct()
+  {
+    echo '親クラスです';
+  }
+
+  abstract public function getProduct();
+}
+
+// 具象クラス、親クラス・基底クラス・superクラス
+class BaseProduct
+{
+  // 変数 関数
+  public function echoProduct()
+  {
+    echo '親クラスです';
+  }
+
+  // オーバーライド(上書き)
+  public function getProduct()
+  {
+    echo '親の関数です';
+  }
+}
+
+// 子クラス・派生クラス・subクラス
+final class Product extends ProductAbstract
 {
 
   // アクセス修飾子, private(外からアクセスできない), protected(自分・継承したクラス), public(公開)
@@ -18,7 +47,7 @@ class Product
     $this->product = $product;
   }
 
-  public function getProduct()
+  final public function getProduct()
   {
     echo $this->product;
   }
@@ -41,7 +70,8 @@ var_dump($instance);
 $instance->getProduct();
 echo '<br>';
 
-$instance->addProduct('add');
+// 親クラスのメソッド
+$instance->echoProduct();
 echo '<br>';
 
 $instance->getProduct();
