@@ -9,9 +9,17 @@ class TestController extends Controller
 {
     public function index()
     {
+
+        // Eloquent(エロクアント)
         $values = Test::all();
 
-        // dd($values);
+        $count = Test::count();
+
+        $first = Test::findOrFail(1);
+
+        $whereTest = Test::where('text', '=', 'test')->get();
+
+        dd($values, $count, $first, $whereTest);
 
         return view('tests.test', compact('values'));
     }
