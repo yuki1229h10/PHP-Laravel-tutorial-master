@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Test;
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -19,8 +20,15 @@ class TestController extends Controller
 
         $whereTest = Test::where('text', '=', 'test')->get();
 
-        dd($values, $count, $first, $whereTest);
+
+        //クエリビルダ
+        $queryBuilder = DB::table('tests')->where('text', '=', 'test')->select('id', 'text')->get();
+
+        dd($values, $count, $first, $whereTest, $queryBuilder);
 
         return view('tests.test', compact('values'));
+
+        //エロクアント VS クエリビルダ
+        // エロクアントの方がリレーション、スコープが使いやすいため前者がおすすめ
     }
 }
