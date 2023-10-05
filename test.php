@@ -18,4 +18,4 @@ $randomCode = generateRandomCode($length);
 
 echo $randomCode;
 
-// commit test
+// commit test2
