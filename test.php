@@ -17,5 +17,3 @@ $length = mt_rand(1, 4);
 $randomCode = generateRandomCode($length);
 
 echo $randomCode;
-
-// commit test3
