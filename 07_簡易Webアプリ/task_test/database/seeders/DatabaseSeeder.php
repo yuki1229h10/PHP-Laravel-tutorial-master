@@ -18,5 +18,7 @@ class DatabaseSeeder extends Seeder
             TestSeeder::class,
             UserSeeder::class,
         ]);
+
+        \App\Models\ContactForm::factory(100)->create();
     }
 }
